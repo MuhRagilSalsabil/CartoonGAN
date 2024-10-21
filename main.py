@@ -13,10 +13,17 @@ def download_model(file_id, output_file):
 # Fungsi untuk melakukan kartunisasi gambar
 def cartoonize_image(model, image):
     image = image.resize((256, 256))  # Ukuran input sesuai dengan model
-    image_array = np.array(image) / 255.0
-    image_array = np.expand_dims(image_array, axis=0)  # Tambahkan batch dimension
+    image_array = np.array(image) / 127.5 - 1  # Normalisasi ke rentang [-1, 1]
+    image_array = np.expand_dims(image_array, axis=0)  # Tambahkan dimensi batch
+
+    # Prediksi gambar kartun
     cartoonized_image = model.predict(image_array)
-    cartoonized_image = np.squeeze(cartoonized_image, axis=0)  # Hilangkan batch dimension
+
+    # Pastikan output berada dalam rentang yang benar
+    cartoonized_image = np.clip(cartoonized_image, -1, 1)
+
+    # Menghilangkan dimensi batch dan denormalisasi
+    cartoonized_image = (cartoonized_image[0] + 1) / 2  # Denormalisasi ke rentang [0, 1]
     cartoonized_image = (cartoonized_image * 255).astype(np.uint8)
     return Image.fromarray(cartoonized_image)
 
@@ -44,12 +51,14 @@ if uploaded_file is not None:
     download_model(keras_file_id, keras_file_name)
 
     # Muat model dengan file .keras yang diunduh
-    # cartoon_gan = load_model('/content/drive/MyDrive/CartoonGAN/best_model_fold_5_epochs_50_lr_0.001.keras', custom_objects={'CartoonGAN': CartoonGAN})
     model = tf.keras.models.load_model(keras_file_name, custom_objects={"CartoonGAN": CartoonGAN})
 
     # Kartunisasi gambar
     st.write("Cartoonizing image...")
-    cartoonized_image = cartoonize_image(model, input_image)
-    
-    # Tampilkan hasil gambar
-    st.image(cartoonized_image, caption="Cartoonized Image", use_column_width=True)
+    try:
+        cartoonized_image = cartoonize_image(model, input_image)
+
+        # Tampilkan hasil gambar
+        st.image(cartoonized_image, caption="Cartoonized Image", use_column_width=True)
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
