@@ -33,7 +33,10 @@ st.title("KARTUNISASI GAMBAR BERTEMA SENI BUDAYA MADURA dengan CARTOON GENERATIV
 tab1, tab2 = st.tabs(["Halaman Utama", "Implementasi"])
 with tab1:
     st.header('Pengenalan')
-    st.caption("""Kartun merupakan salah satu bentuk seni yang sering kita jumpai dalam kehidupan sehari-hari. 
+    st.caption("""Kartunisasi adalah proses mengubah gambar atau foto menjadi ilustrasi yang menyerupai gaya kartun. 
+    Dalam kartunisasi, gambar asli akan disederhanakan dengan mengurangi detail seperti tekstur dan warna yang terlalu kompleks, 
+    serta menambahkan elemen visual khas kartun, seperti garis tebal, pewarnaan blok, atau bentuk wajah yang lebih sederhana.
+    Kartun merupakan salah satu bentuk seni yang sering kita jumpai dalam kehidupan sehari-hari. 
     Selain nilai seninya yang tinggi, kartun juga memiliki kegunaan yang beragam, 
     mulai dari tampilan cetak hingga digunakan sebagai alat bercerita dalam pendidikan anak.""")
 with tab2:
