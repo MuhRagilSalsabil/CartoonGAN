@@ -33,7 +33,7 @@ st.title("KARTUNISASI GAMBAR BERTEMA SENI BUDAYA MADURA dengan CARTOON GENERATIV
 tab1, tab2 = st.tabs(["Halaman Utama", "Implementasi"])
 with tab1:
     st.header('Pengenalan')
-    st.text("""Kartun merupakan salah satu bentuk seni yang sering kita jumpai dalam kehidupan sehari-hari. 
+    st.caption("""Kartun merupakan salah satu bentuk seni yang sering kita jumpai dalam kehidupan sehari-hari. 
     Selain nilai seninya yang tinggi, kartun juga memiliki kegunaan yang beragam, 
     mulai dari tampilan cetak hingga digunakan sebagai alat bercerita dalam pendidikan anak.""")
 with tab2:
