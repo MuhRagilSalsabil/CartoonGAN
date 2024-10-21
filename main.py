@@ -65,8 +65,8 @@ with tab1:
     st.caption("""Discriminator bertugas untuk melakukan proses pengecekkan pada gambar yang dihasilkan oleh Generator 
     dengan gambar kartun asli dalam hal menentukkan apakah gambar hasil tersebut termasuk gambar asli atau palsu""")
 
-    disc_img_id = '10-RVDr6cA9zgie8g7tiTxTN4o2_MBLxf'
-    disc_img_name = 'generator.png'
+    disc_img_id = '1o7qObhf8dMH7PNrJs08dLgAtWjpAlLNu'
+    disc_img_name = 'discriminator.png'
 
     download_image(disc_img_id, disc_img_name)
     discriminator_image = Image.open(disc_img_name)
