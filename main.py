@@ -28,12 +28,12 @@ def cartoonize_image(model, image):
     return Image.fromarray(cartoonized_image)
 
 # Streamlit Interface
-st.title("Cartoonize Image with CartoonGAN")
+st.title("KARTUNISASI GAMBAR BERTEMA SENI BUDAYA MADURA dengan CARTOON GENERATIVE ADVERSARIAL NETWORK (CartoonGAN)")
 
 tab1, tab2 = st.tabs(["Pengenalan", "Implementasi"])
 with tab1:
     st.header('CartoonGAN')
-    st.caption('Cartoon Generative Adversarial Network (CartoonGAN) merupakan')
+    st.text('Cartoon Generative Adversarial Network (CartoonGAN) merupakan')
 with tab2:
     # Input gambar
     uploaded_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
