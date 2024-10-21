@@ -3,6 +3,7 @@ from PIL import Image
 import numpy as np
 import CartoonGAN  # Mengimpor fungsi dari program.py
 import tempfile
+import cv2
 
 st.title("Aplikasi Kartunisasi Gambar Menggunakan CartoonGAN")
 
