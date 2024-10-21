@@ -3,6 +3,7 @@ from PIL import Image
 import numpy as np
 import tensorflow as tf
 import gdown
+import CartoonGAN
 
 # Fungsi untuk mengunduh file dari Google Drive berdasarkan ID
 def download_model(file_id, output_file):
