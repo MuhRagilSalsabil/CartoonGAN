@@ -33,6 +33,7 @@ st.title("KARTUNISASI GAMBAR BERTEMA SENI BUDAYA MADURA dengan CARTOON GENERATIV
 tab1, tab2 = st.tabs(["Halaman Utama", "Implementasi"])
 with tab1:
     st.header('Pengenalan')
+    st.subheader('Kartunisasi')
     st.caption("""Kartunisasi adalah proses mengubah gambar atau foto menjadi ilustrasi yang menyerupai gaya kartun. 
     Dalam kartunisasi, gambar asli akan disederhanakan dengan mengurangi detail seperti tekstur dan warna yang terlalu kompleks, 
     serta menambahkan elemen visual khas kartun, seperti garis tebal, pewarnaan blok, atau bentuk wajah yang lebih sederhana.
