@@ -40,6 +40,10 @@ with tab1:
     Kartun merupakan salah satu bentuk seni yang sering kita jumpai dalam kehidupan sehari-hari. 
     Selain nilai seninya yang tinggi, kartun juga memiliki kegunaan yang beragam, 
     mulai dari tampilan cetak hingga digunakan sebagai alat bercerita dalam pendidikan anak.""")
+
+    st.subheader('CartoonGAN')
+    st.caption("""CartoonGAN adalah sebuah model dalam visi komputer yang menggunakan Generative Adversarial Networks (GANs) untuk mengubah gambar-gambar dari foto ke kartun. 
+    Model ini terdiri dari dua jaringan yaitu Generator dan Discriminator.""")
 with tab2:
     # Input gambar
     uploaded_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
