@@ -3,21 +3,12 @@ from PIL import Image
 import numpy as np
 import tensorflow as tf
 import gdown
-import CartoonGAN
+import CartoonGAN  # Pastikan modul ini ada dan berfungsi
 
 # Fungsi untuk mengunduh file dari Google Drive berdasarkan ID
 def download_model(file_id, output_file):
     url = f'https://drive.google.com/uc?id={file_id}'
     gdown.download(url, output_file, quiet=False)
-
-# Memuat model dari file JSON dan Keras
-def load_model(json_file_path, weights_file_path):
-    with open(json_file_path, 'r') as json_file:
-        model_json = json_file.read()
-    
-    model = tf.keras.models.model_from_json(model_json)
-    model.load_weights(weights_file_path)
-    return model
 
 # Fungsi untuk melakukan kartunisasi gambar
 def cartoonize_image(model, image):
@@ -44,19 +35,17 @@ if uploaded_file is not None:
     st.write("Loading CartoonGAN model...")
 
     # ID dan nama file dari Google Drive
-    json_file_id = '1GmfGcFNCyMtVVEfgDeWg4sFRYGZxy15J'  # ID untuk file .json
     keras_file_id = '120jbgVTGeeA5_cdWEGyshCcl2k9OOsdF'  # ID untuk file .keras
 
     # Nama file lokal setelah diunduh
-    json_file_name = 'cartoon_gan_architecture.json'
     keras_file_name = 'best_model_fold_5_epochs_50_lr_0.001.keras'
 
-    # Unduh kedua file dari Google Drive
-    download_model(json_file_id, json_file_name)
+    # Unduh file .keras dari Google Drive
     download_model(keras_file_id, keras_file_name)
 
-    # Muat model dengan file yang diunduh
-    model = load_model(json_file_name, keras_file_name)
+    # Muat model dengan file .keras yang diunduh
+    # cartoon_gan = load_model('/content/drive/MyDrive/CartoonGAN/best_model_fold_5_epochs_50_lr_0.001.keras', custom_objects={'CartoonGAN': CartoonGAN})
+    model = tf.keras.models.load_model(keras_file_name, custom_objects={"CartoonGAN": CartoonGAN})
 
     # Kartunisasi gambar
     st.write("Cartoonizing image...")
