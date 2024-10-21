@@ -81,6 +81,3 @@ class CartoonGAN(tf.keras.Model):
         generator = tf.keras.layers.deserialize(config.pop("generator"))
         discriminator = tf.keras.layers.deserialize(config.pop("discriminator"))
         return cls(generator=generator, discriminator=discriminator, **config)
-    content_loss_fn=content_loss,
-    edge_loss_fn=edge_loss
-)
