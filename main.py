@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 import CartoonGAN  # Mengimpor fungsi dari program.py
+!pip install opencv-python
 import tempfile
 import cv2
 
