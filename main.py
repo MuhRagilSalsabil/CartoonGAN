@@ -30,10 +30,10 @@ def cartoonize_image(model, image):
 # Streamlit Interface
 st.title("Cartoonize Image with CartoonGAN")
 
-tab1, tab2 = st.tabs(["Pengenalan", "Kartunisasi"])
+tab1, tab2 = st.tabs(["Pengenalan", "Implementasi"])
 with tab1:
     st.header('CartoonGAN')
-    st.title('Cartoon Generative Adversarial Network (CartoonGAN) merupakan')
+    st.caption('Cartoon Generative Adversarial Network (CartoonGAN) merupakan')
 with tab2:
     # Input gambar
     uploaded_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
