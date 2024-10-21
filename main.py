@@ -61,6 +61,17 @@ with tab1:
     generator_image = Image.open(gen_img_name)
     st.image(generator_image, caption="Arsitektur Jaringan Generator", use_column_width=True)
 
+    st.subheader('Discriminator')
+    st.caption("""Discriminator bertugas untuk melakukan proses pengecekkan pada gambar yang dihasilkan oleh Generator 
+    dengan gambar kartun asli dalam hal menentukkan apakah gambar hasil tersebut termasuk gambar asli atau palsu""")
+
+    disc_img_id = '10-RVDr6cA9zgie8g7tiTxTN4o2_MBLxf'
+    disc_img_name = 'generator.png'
+
+    download_image(disc_img_id, disc_img_name)
+    discriminator_image = Image.open(disc_img_name)
+    st.image(discriminator_image, caption="Arsitektur Jaringan Discriminator", use_column_width=True)
+
 with tab2:
     # Input gambar
     uploaded_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
