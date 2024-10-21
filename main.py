@@ -54,7 +54,7 @@ with tab1:
     st.caption("""Generator merupakan jaringan yang bertugas untuk mengubah gambar dari domain foto ke kartun dengan mengurangi perbedaan antara gambar yang dihasilkan dan kartun asli.
     berikut merupakan arsitektur dari jaringan Generator itu sendiri.""")
     
-    gen_img = '10-RVDr6cA9zgie8g7tiTxTN4o2_MBLxf'
+    gen_img_id = '10-RVDr6cA9zgie8g7tiTxTN4o2_MBLxf'
     gen_img_name = 'generator.png'
 
     download_image(gen_img_id, gen_img_name)
