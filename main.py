@@ -43,7 +43,19 @@ with tab1:
 
     st.subheader('CartoonGAN')
     st.caption("""CartoonGAN adalah sebuah model dalam visi komputer yang menggunakan Generative Adversarial Networks (GANs) untuk mengubah gambar-gambar dari foto ke kartun. 
-    Model ini terdiri dari dua jaringan yaitu Generator dan Discriminator.""")
+    Model ini terdiri dari dua jaringan yaitu Generator dan Discriminator. Adapun penjelasan dari Generator dan Discriminator sebagai berikut.""")
+    
+    st.subheader('Generator')
+    st.caption("""Generator merupakan jaringan yang bertugas untuk mengubah gambar dari domain foto ke kartun dengan mengurangi perbedaan antara gambar yang dihasilkan dan kartun asli.
+    berikut merupakan arsitektur dari jaringan Generator itu sendiri.""")
+    
+    gen_img = '10-RVDr6cA9zgie8g7tiTxTN4o2_MBLxf'
+    gen_img_name = 'generator.png'
+
+    download_image(gen_img_id, gen_img_name)
+    generator_image = Image.open(gen_img_name)
+    st.image(generator_image, caption="Arsitektur Jaringan Generator", use_column_width=True)
+
 with tab2:
     # Input gambar
     uploaded_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
