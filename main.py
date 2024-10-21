@@ -10,6 +10,11 @@ def download_model(file_id, output_file):
     url = f'https://drive.google.com/uc?id={file_id}'
     gdown.download(url, output_file, quiet=False)
 
+# Fungsi untuk mengunduh file dari Google Drive berdasarkan ID
+def download_image(file_id, output_file):
+    url = f'https://drive.google.com/uc?id={file_id}'
+    gdown.download(url, output_file, quiet=False)
+
 # Fungsi untuk melakukan kartunisasi gambar
 def cartoonize_image(model, image):
     image = image.resize((256, 256))  # Ukuran input sesuai dengan model
