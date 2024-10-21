@@ -30,35 +30,40 @@ def cartoonize_image(model, image):
 # Streamlit Interface
 st.title("Cartoonize Image with CartoonGAN")
 
-# Input gambar
-uploaded_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
-
-if uploaded_file is not None:
-    # Tampilkan gambar input
-    input_image = Image.open(uploaded_file)
-    st.image(input_image, caption="Original Image", use_column_width=True)
+tab1, tab2 = st.tabs(["Pengenalan", "Kartunisasi"])
+with tab1:
+    st.header('CartoonGAN')
+    st.title('Cartoon Generative Adversarial Network (CartoonGAN) merupakan')
+with tab2:
+    # Input gambar
+    uploaded_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
     
-    # Unduh dan muat model
-    st.write("Loading CartoonGAN model...")
-
-    # ID dan nama file dari Google Drive
-    keras_file_id = '120jbgVTGeeA5_cdWEGyshCcl2k9OOsdF'  # ID untuk file .keras
-
-    # Nama file lokal setelah diunduh
-    keras_file_name = 'best_model_fold_5_epochs_50_lr_0.001.keras'
-
-    # Unduh file .keras dari Google Drive
-    download_model(keras_file_id, keras_file_name)
-
-    # Muat model dengan file .keras yang diunduh
-    model = tf.keras.models.load_model(keras_file_name, custom_objects={"CartoonGAN": CartoonGAN})
-
-    # Kartunisasi gambar
-    st.write("Cartoonizing image...")
-    try:
-        cartoonized_image = cartoonize_image(model, input_image)
-
-        # Tampilkan hasil gambar
-        st.image(cartoonized_image, caption="Cartoonized Image", use_column_width=True)
-    except Exception as e:
-        st.error(f"An error occurred: {e}")
+    if uploaded_file is not None:
+        # Tampilkan gambar input
+        input_image = Image.open(uploaded_file)
+        st.image(input_image, caption="Original Image", use_column_width=True)
+        
+        # Unduh dan muat model
+        st.write("Loading CartoonGAN model...")
+    
+        # ID dan nama file dari Google Drive
+        keras_file_id = '120jbgVTGeeA5_cdWEGyshCcl2k9OOsdF'  # ID untuk file .keras
+    
+        # Nama file lokal setelah diunduh
+        keras_file_name = 'best_model_fold_5_epochs_50_lr_0.001.keras'
+    
+        # Unduh file .keras dari Google Drive
+        download_model(keras_file_id, keras_file_name)
+    
+        # Muat model dengan file .keras yang diunduh
+        model = tf.keras.models.load_model(keras_file_name, custom_objects={"CartoonGAN": CartoonGAN})
+    
+        # Kartunisasi gambar
+        st.write("Cartoonizing image...")
+        try:
+            cartoonized_image = cartoonize_image(model, input_image)
+    
+            # Tampilkan hasil gambar
+            st.image(cartoonized_image, caption="Cartoonized Image", use_column_width=True)
+        except Exception as e:
+            st.error(f"An error occurred: {e}")
