@@ -34,7 +34,8 @@ def cartoonize_image(model, image):
 
 # Streamlit Interface
 st.title("KARTUNISASI GAMBAR BERTEMA SENI BUDAYA MADURA dengan CARTOON GENERATIVE ADVERSARIAL NETWORK (CartoonGAN)")
-st.caption('Disusun oleh Muh. Ragil Salsabil yang dibimbing oleh Arik Kurniawati, S.Kom., M.T. dan Dr. Cucun Very Angkoso, S.T., M.T.')
+st.caption("""Disusun oleh Muh. Ragil Salsabil 
+dibimbing oleh Dr. Arik Kurniawati, S.Kom., M.T. dan Dr. Cucun Very Angkoso, S.T., M.T.""")
 
 tab1, tab2 = st.tabs(["Halaman Utama", "Implementasi"])
 with tab1:
