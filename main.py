@@ -87,7 +87,7 @@ with tab2:
         st.write("Loading CartoonGAN model...")
     
         # ID dan nama file dari Google Drive
-        keras_file_id = '120jbgVTGeeA5_cdWEGyshCcl2k9OOsdF'  # ID untuk file .keras
+        keras_file_id = '10r_xaLPRcqWYq2ohS9DTMcS42r3xKwFU'  # ID untuk file .keras
     
         # Nama file lokal setelah diunduh
         keras_file_name = 'best_model_fold_5_epochs_50_lr_0.001.keras'
