@@ -90,7 +90,7 @@ with tab2:
         keras_file_id = '10r_xaLPRcqWYq2ohS9DTMcS42r3xKwFU'  # ID untuk file .keras
     
         # Nama file lokal setelah diunduh
-        keras_file_name = 'best_model_fold_5_epochs_50_lr_0.001.keras'
+        keras_file_name = 'best_model1_fold_5_epochs_50_lr_0.001.keras'
     
         # Unduh file .keras dari Google Drive
         download_model(keras_file_id, keras_file_name)
